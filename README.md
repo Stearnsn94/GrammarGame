@@ -1,4 +1,4 @@
-# GrammarGame  
+# Grammar Grable 
 2D Puzzle-Based Grammar Learning Prototype
 
 # Educational and Entertainment Aspects
