@@ -22,6 +22,8 @@ public class InteractionPromptUI : MonoBehaviour
 
     public void Hide()
     {
+        if (rootObject == null)
+            return;
         rootObject.SetActive(false);
     }
 }
