@@ -36,7 +36,7 @@ The interface is intentionally minimal and consistent. The inventory panel, inte
 - Interact: E
 - Select inventory item: Left-click on UI button
 
-## Gameplay UI Summary
+## Gameplay Summary
 - The player moves through a 2D environment.
 - Item objects can be collected by approaching them and pressing E.
 - Collected items appear in the inventory panel as clickable buttons.
