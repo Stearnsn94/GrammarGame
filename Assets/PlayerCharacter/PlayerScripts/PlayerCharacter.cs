@@ -1,7 +1,12 @@
 using UnityEngine;
+using System.Collections.Generic;
+
 
 public class PlayerCharacter : MonoBehaviour
 {
+    // Simple inventory list
+    public List<Item> inventory = new List<Item>();
+
     [Header("Movement (optional)")]
     public float moveSpeed = 4f;
     private Rigidbody2D rb;
@@ -20,7 +25,7 @@ public class PlayerCharacter : MonoBehaviour
         HandleInteractInput();
     }
 
-    // --- Movement (optional) ---
+    //Movement (optional)
     private void HandleMovement()
     {
         float x = Input.GetAxisRaw("Horizontal");
@@ -38,12 +43,13 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
-    // --- Interact (E key) ---
+    //Interact (E key)
     private void HandleInteractInput()
     {
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
         {
             currentInteractable.Interact(this);
+            InteractionPromptUI.Instance.Hide();
         }
     }
 
@@ -52,9 +58,20 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (item == null) return;
 
+        if (!inventory.Contains(item))
+        {
+            inventory.Add(item);
+        }
+
         Debug.Log("Collected item: " + item.displayName);
-        // later: add to inventory list
+
+        // Update the inventory panel if it exists
+        if (InventoryUI.Instance != null)
+        {
+            InventoryUI.Instance.Refresh();
+        }
     }
+
 
     // Detect interactables via trigger
     private void OnTriggerEnter2D(Collider2D other)
@@ -63,7 +80,7 @@ public class PlayerCharacter : MonoBehaviour
         if (interactObj != null)
         {
             currentInteractable = interactObj;
-            // later: show "Press E" UI
+            InteractionPromptUI.Instance.Show("Press E to interact");
         }
     }
 
@@ -73,7 +90,7 @@ public class PlayerCharacter : MonoBehaviour
         if (interactObj != null && interactObj == currentInteractable)
         {
             currentInteractable = null;
-            // later: hide "Press E" UI
+            InteractionPromptUI.Instance.Hide();
         }
     }
 }
