@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: f072527ff9ceb4ef8bfb49ff9a5a094a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2491276235461232094
+    second: freepikcompany_0
+  - first:
+      213: -2399559721964403565
+    second: freepikcompany_1
+  - first:
+      213: -4465942844681685113
+    second: freepikcompany_2
+  - first:
+      213: 7918469255805921112
+    second: freepikcompany_3
+  - first:
+      213: 2405617271701177373
+    second: freepikcompany_4
+  - first:
+      213: 316609521319280465
+    second: freepikcompany_5
+  - first:
+      213: 7334045983547250574
+    second: freepikcompany_6
+  - first:
+      213: 6507104143205993361
+    second: freepikcompany_7
+  - first:
+      213: -229461914521586702
+    second: freepikcompany_8
+  - first:
+      213: -8297846459773309639
+    second: freepikcompany_9
+  - first:
+      213: 3751354275571323268
+    second: freepikcompany_10
+  - first:
+      213: 9207581230545193374
+    second: freepikcompany_11
+  - first:
+      213: 2335262981353317817
+    second: freepikcompany_12
+  - first:
+      213: -6899913110948736063
+    second: freepikcompany_13
+  - first:
+      213: 3442389447550931121
+    second: freepikcompany_14
+  - first:
+      213: -6764994259934999420
+    second: freepikcompany_15
+  - first:
+      213: -3425025189575580424
+    second: freepikcompany_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: freepikcompany_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6
+        width: 52
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22af5f396753d6dd0800000000000000
+      internalID: -2491276235461232094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 44
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3940af2752d03bed0800000000000000
+      internalID: -2399559721964403565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_2
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 9
+        width: 21
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 787fc83f4a8c502c0800000000000000
+      internalID: -4465942844681685113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_3
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 36
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857e92595dd04ed60800000000000000
+      internalID: 7918469255805921112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_4
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 9
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d140b41c928726120800000000000000
+      internalID: 2405617271701177373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_5
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 9
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ffdb2aea2d46400800000000000000
+      internalID: 316609521319280465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 8
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e87d6bfe6f3c7c560800000000000000
+      internalID: 7334045983547250574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_7
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 8
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b044cfdb0ed4a50800000000000000
+      internalID: 6507104143205993361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_8
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 0
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f3b57fba99c0dcf0800000000000000
+      internalID: -229461914521586702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_9
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 9
+        width: 9
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93daa74db9028dc80800000000000000
+      internalID: -8297846459773309639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_10
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 9
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 481521e86dc7f0430800000000000000
+      internalID: 3751354275571323268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_11
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 9
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9943376856e7cf70800000000000000
+      internalID: 9207581230545193374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_12
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 9
+        width: 41
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b52fac0f45886020800000000000000
+      internalID: 2335262981353317817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_13
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 0
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c317d835959e30a0800000000000000
+      internalID: -6899913110948736063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_14
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 9
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b093d7c6f2d5cf20800000000000000
+      internalID: 3442389447550931121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_15
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 9
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48c84052099ed12a0800000000000000
+      internalID: -6764994259934999420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freepikcompany_16
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 0
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f425949cbdd770d0800000000000000
+      internalID: -3425025189575580424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      freepikcompany_0: -2491276235461232094
+      freepikcompany_1: -2399559721964403565
+      freepikcompany_10: 3751354275571323268
+      freepikcompany_11: 9207581230545193374
+      freepikcompany_12: 2335262981353317817
+      freepikcompany_13: -6899913110948736063
+      freepikcompany_14: 3442389447550931121
+      freepikcompany_15: -6764994259934999420
+      freepikcompany_16: -3425025189575580424
+      freepikcompany_2: -4465942844681685113
+      freepikcompany_3: 7918469255805921112
+      freepikcompany_4: 2405617271701177373
+      freepikcompany_5: 316609521319280465
+      freepikcompany_6: 7334045983547250574
+      freepikcompany_7: 6507104143205993361
+      freepikcompany_8: -229461914521586702
+      freepikcompany_9: -8297846459773309639
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
