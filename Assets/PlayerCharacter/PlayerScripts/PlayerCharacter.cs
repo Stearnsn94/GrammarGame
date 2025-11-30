@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 
 public class PlayerCharacter : MonoBehaviour
@@ -14,6 +15,14 @@ public class PlayerCharacter : MonoBehaviour
     // The interactable currently in range
     private Interactable currentInteractable;
 
+    //players health
+    [Header("players healht")]
+    private int player_health = 100; // health should be increments of 3
+
+    //to get the players position
+    public Vector2 get_players_location() { return rb.position; }
+
+    private Interactable currentInteractable2;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,6 +30,9 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Update()
     {
+        // Used AI for this because I dont know Unity/C# logging convention
+        Debug.Log($"Player's HEALTH: ({player_health})");
+        Debug.Log($"Player's current location: ({get_players_location().x}, {get_players_location().y})");
         HandleMovement();
         HandleInteractInput();
     }
@@ -92,5 +104,10 @@ public class PlayerCharacter : MonoBehaviour
             currentInteractable = null;
             InteractionPromptUI.Instance.Hide();
         }
+    }
+
+    public int drain_health(int drain_amount)
+    {
+        return player_health - drain_amount;
     }
 }
