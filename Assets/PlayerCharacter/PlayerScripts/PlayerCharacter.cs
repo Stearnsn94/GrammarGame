@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+using UnityEngine.UI;
 
 public class PlayerCharacter : MonoBehaviour
 {
@@ -14,9 +14,20 @@ public class PlayerCharacter : MonoBehaviour
     // The interactable currently in range
     private Interactable currentInteractable;
 
+    [Header("Health")]
+    [SerializeField] private int maxHealth = 3;
+    [SerializeField] private int currentHealth;
+    [Header("UI")]
+    [SerializeField] private Slider healthSlider;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
+        if(healthSlider != null)
+        {
+            healthSlider.maxValue = maxHealth;
+            healthSlider.value = currentHealth;
+        }
     }
 
     private void Update()
@@ -25,7 +36,7 @@ public class PlayerCharacter : MonoBehaviour
         HandleInteractInput();
     }
 
-    //Movement (optional)
+    // Movement (optional)
     private void HandleMovement()
     {
         float x = Input.GetAxisRaw("Horizontal");
@@ -43,13 +54,17 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
-    //Interact (E key)
+    // Interact (E key)
     private void HandleInteractInput()
     {
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
         {
             currentInteractable.Interact(this);
-            InteractionPromptUI.Instance.Hide();
+
+            if (InteractionPromptUI.Instance != null)
+            {
+                InteractionPromptUI.Instance.Hide();
+            }
         }
     }
 
@@ -72,6 +87,28 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
+    // --- Health / Damage ---
+
+    public void DrainHealth(int amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth < 0) currentHealth = 0;
+
+        Debug.Log("Player took damage. Current health: " + currentHealth);
+
+        // Update the slider UI
+        if (healthSlider != null)
+        {
+            healthSlider.value = currentHealth;
+        }
+
+        // TODO: you can add respawn or game-over behavior here if desired.
+        // For now, we just log it.
+        if (currentHealth == 0)
+        {
+            Debug.Log("Player died (no respawn implemented yet).");
+        }
+    }
 
     // Detect interactables via trigger
     private void OnTriggerEnter2D(Collider2D other)
@@ -80,7 +117,11 @@ public class PlayerCharacter : MonoBehaviour
         if (interactObj != null)
         {
             currentInteractable = interactObj;
-            InteractionPromptUI.Instance.Show("Press E to interact");
+
+            if (InteractionPromptUI.Instance != null)
+            {
+                InteractionPromptUI.Instance.Show("Press E to interact");
+            }
         }
     }
 
@@ -90,7 +131,11 @@ public class PlayerCharacter : MonoBehaviour
         if (interactObj != null && interactObj == currentInteractable)
         {
             currentInteractable = null;
-            InteractionPromptUI.Instance.Hide();
+
+            if (InteractionPromptUI.Instance != null)
+            {
+                InteractionPromptUI.Instance.Hide();
+            }
         }
     }
 }
