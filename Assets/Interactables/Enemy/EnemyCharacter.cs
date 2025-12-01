@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -6,8 +7,11 @@ public class EnemyCharacter : MonoBehaviour, Interactable
 {
     PlayerCharacter playable_character;
 
+    float enemy_speed = 5.0f; 
+
     void Awake()
     {   
+        //call in the playable_character in order to get corridates of the player
         playable_character = GetComponent<PlayerCharacter>();
     }
 
@@ -28,9 +32,11 @@ public class EnemyCharacter : MonoBehaviour, Interactable
         
     }
 
-    private void follow_player()
+    private void move_follow_player()
     {
-        
+        Transform enemy_follow = transform;
+
+        enemy_follow.position = Vector2.MoveTowards(enemy_follow.position, playable_character.get_players_location(), enemy_speed * Time.deltaTime);
     }
 
     public void Interact(PlayerCharacter player)

@@ -2,8 +2,11 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class main_menu : MonoBehaviour
 {
+    private diffculty_manager diff_mang;
+
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("SampleScene");
@@ -11,11 +14,9 @@ public class main_menu : MonoBehaviour
 
     public void ExitGame() 
     {
-        Application.Quit();
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
-
-    
-
-    
-
 }
