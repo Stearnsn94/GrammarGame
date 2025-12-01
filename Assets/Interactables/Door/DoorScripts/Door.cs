@@ -15,6 +15,11 @@ public class Door : MonoBehaviour, Interactable
     // The question currently active on this door interaction
     private QuestionEntry currentQuestion;
 
+    private void Awake()
+    {
+        currentQuestion = QuestionManager.Instance.GetRandomQuestion(); 
+    }
+
     private void Reset()
     {
         doorCollider = GetComponent<Collider2D>();
@@ -36,7 +41,7 @@ public class Door : MonoBehaviour, Interactable
         }
 
         // 1) Get a random question
-        currentQuestion = QuestionManager.Instance.GetRandomQuestion();
+        
         if (currentQuestion == null)
         {
             Debug.LogError("[Door] QuestionManager returned null question.");
