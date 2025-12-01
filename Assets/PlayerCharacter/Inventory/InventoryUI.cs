@@ -92,17 +92,6 @@ public class InventoryUI : MonoBehaviour
     public void BeginDoorSelection(Door door)
 {
     currentDoor = door;
-
-    // If the player has NO items → don’t pause
-    if (player.inventory.Count == 0)
-    {
-            ShowFeedbackTemporary("You have no items to try on this door.");
-        return;
-    }
-
-    // Player HAS items → pause and show question
-    feedbackText.text = "The subject in which you find out the solution to a problem is ____.";
-    Time.timeScale = 0f;
 }
 
 
@@ -133,5 +122,11 @@ public class InventoryUI : MonoBehaviour
 
         // Rebuild the buttons in case you removed the key from inventory
         Refresh();
+    }
+
+    public void ShowQuestion(string questionText)
+    {
+        Debug.Log("[InventoryUI] ShowQuestion: " + questionText);
+        feedbackText.text = questionText;
     }
 }
