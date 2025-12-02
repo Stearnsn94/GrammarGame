@@ -14,28 +14,7 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private TMP_Text feedbackText;
 
     private Door currentDoor;
-
     private Coroutine hideRoutine;
-    private IEnumerator HideFeedbackAfterDelay(float delay)
-    {
-        // Wait
-        yield return new WaitForSecondsRealtime(delay);  // Realtime so it works even when game is paused
-
-        // Clear text
-        feedbackText.text = "";
-    }
-
-    private void ShowFeedbackTemporary(string message, float duration = 2f)
-    {
-        feedbackText.text = message;
-
-        // Cancel old coroutine if text was already on screen
-        if (hideRoutine != null)
-            StopCoroutine(hideRoutine);
-
-        // Start new hide timer
-        hideRoutine = StartCoroutine(HideFeedbackAfterDelay(duration));
-    }
 
     private void Awake()
     {
@@ -44,10 +23,36 @@ public class InventoryUI : MonoBehaviour
 
     private void Start()
     {
-        feedbackText.text = "";
+        if (feedbackText != null)
+            feedbackText.text = "";
+
         Refresh();
     }
 
+    // ----------------- Feedback helpers -----------------
+    private IEnumerator HideFeedbackAfterDelay(float delay)
+    {
+        // Realtime so it still works when Time.timeScale == 0
+        yield return new WaitForSecondsRealtime(delay);
+
+        if (feedbackText != null)
+            feedbackText.text = "";
+    }
+
+    private void ShowFeedbackTemporary(string message, float duration = 2f)
+    {
+        if (feedbackText == null)
+            return;
+
+        feedbackText.text = message;
+
+        if (hideRoutine != null)
+            StopCoroutine(hideRoutine);
+
+        hideRoutine = StartCoroutine(HideFeedbackAfterDelay(duration));
+    }
+
+    // ----------------- Inventory rebuild -----------------
     public void Refresh()
     {
         if (player == null || itemListRoot == null)
@@ -64,24 +69,40 @@ public class InventoryUI : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        // Add a button for every item in inventory
+        // Create a button for each item
         foreach (Item item in player.inventory)
         {
             GameObject buttonObj = Instantiate(itemButtonPrefab, itemListRoot);
 
+            // 1) ICON: use the Image on the ItemButton itself (root)
+            Image iconImage = buttonObj.GetComponent<Image>();
+            if (iconImage != null)
+            {
+                // This will override the temporary sprite set on the prefab
+                iconImage.sprite = item.icon;
+                iconImage.enabled = (item.icon != null);
+
+                Debug.Log($"[InventoryUI] Setting icon for {item.displayName} to {(item.icon != null ? item.icon.name : "NULL")}");
+            }
+            else
+            {
+                Debug.LogWarning("[InventoryUI] ItemButton prefab has no Image on the root object.");
+            }
+
+            // 2) LABEL: find a TMP_Text in children and set the name
             TMP_Text label = buttonObj.GetComponentInChildren<TMP_Text>();
             if (label != null)
             {
-                label.text = item.displayName;   // show the item name in the inventory
+                label.text = item.displayName;
             }
             else
             {
                 Debug.LogWarning("InventoryUI.Refresh: No TMP_Text found on itemButtonPrefab.");
             }
 
-            // Hook up click event
+            // 3) CLICK HANDLER
             Button btn = buttonObj.GetComponent<Button>();
-            Item capturedItem = item; // capture for closure
+            Item capturedItem = item;
             if (btn != null)
             {
                 btn.onClick.AddListener(() => TrySelectItem(capturedItem));
@@ -89,11 +110,11 @@ public class InventoryUI : MonoBehaviour
         }
     }
 
+    // Door question flow
     public void BeginDoorSelection(Door door)
-{
-    currentDoor = door;
-}
-
+    {
+        currentDoor = door;
+    }
 
     private void TrySelectItem(Item item)
     {
@@ -117,16 +138,17 @@ public class InventoryUI : MonoBehaviour
             ShowFeedbackTemporary("Wrong item.");
         }
 
-        // Unpause the game after making a choice (right OR wrong)
+        // Unpause after answer (right or wrong)
         Time.timeScale = 1f;
 
-        // Rebuild the buttons in case you removed the key from inventory
+        // Update inventory (e.g., if the key is removed)
         Refresh();
     }
 
     public void ShowQuestion(string questionText)
     {
         Debug.Log("[InventoryUI] ShowQuestion: " + questionText);
-        feedbackText.text = questionText;
+        if (feedbackText != null)
+            feedbackText.text = questionText;
     }
 }

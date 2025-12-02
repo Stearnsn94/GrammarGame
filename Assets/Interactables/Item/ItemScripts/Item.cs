@@ -5,4 +5,7 @@ public class Item : ScriptableObject
 {
     public string itemId;
     public string displayName; // This is dynamic and will be changed at runtime
+
+    [Header("Sprite")]
+    public Sprite icon;
 }
