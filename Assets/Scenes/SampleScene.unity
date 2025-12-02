@@ -281,7 +281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 80258464}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 5.19, y: 0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 258848508}
   - component: {fileID: 258848509}
   - component: {fileID: 258848510}
+  - component: {fileID: 258848511}
   m_Layer: 4
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -470,7 +471,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300004, guid: 25dbfbd01b6dc0c49a048b76d7f7368f, type: 3}
+  m_Sprite: {fileID: 21300014, guid: b62a8e74a325e4493956501c30341010, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -490,7 +491,7 @@ Transform:
   m_GameObject: {fileID: 258848505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.724, z: 0}
+  m_LocalPosition: {x: 0, y: 1.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -513,6 +514,10 @@ MonoBehaviour:
   maxHealth: 3
   currentHealth: 0
   healthSlider: {fileID: 1476840081}
+  spriteUp: {fileID: 8814640168365826005, guid: 0a4d40193d08ff84ba7fe18085473901, type: 3}
+  spriteDown: {fileID: -7790016670039292865, guid: f5c8c98951135f747947d8d3120ba130, type: 3}
+  spriteLeft: {fileID: -3360981072361176635, guid: f5c8c98951135f747947d8d3120ba130, type: 3}
+  spriteRight: {fileID: 7221590977746547601, guid: 0a4d40193d08ff84ba7fe18085473901, type: 3}
 --- !u!50 &258848509
 Rigidbody2D:
   serializedVersion: 5
@@ -574,11 +579,11 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0038398802, y: 0.4540009}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49451447, y: 0.0872719}
-    oldSize: {x: 0.7, y: 1.1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -586,6 +591,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7, y: 1.1}
   m_EdgeRadius: 0
+--- !u!95 &258848511
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258848505}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c664e436d5fbed42900ac937fcf889b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &269376967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,6 +1566,75 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc64c5300f6b974ca3e20142853dbc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
+--- !u!1 &520781695
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 520781697}
+  - component: {fileID: 520781696}
+  m_Layer: 0
+  m_Name: QuestionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &520781696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520781695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9372bdd04ed7d4cbf3cb4aaf8f6422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionManager
+  questions:
+  - questionText: This is my first sample question answer with hello and not goodbye.
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: hello2
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - goodbye
+  - questionText: This is my second sample question answer with hello and not goodbye.
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: hello3
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - goodbye
+  - questionText: This is my third sample question answer with shckalaka and not
+      tuna.
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: schkalaka
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - tuna
+    - notTuna
+--- !u!4 &520781697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520781695}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &522863028 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7105525286404280831, guid: db22f34fc031f2b41bd198a242c9e393, type: 3}
@@ -1719,7 +1815,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 169.04999, y: 285.9806}
+  m_SizeDelta: {x: 217.5348, y: 730.2706}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &534382305
 MonoBehaviour:
@@ -2269,7 +2365,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 1
-  requiredItem: {fileID: 0}
   doorCollider: {fileID: 652329453}
   doorSprite: {fileID: 652329451}
 --- !u!1 &660961752
@@ -5714,4 +5809,5 @@ SceneRoots:
   - {fileID: 652329452}
   - {fileID: 293207619}
   - {fileID: 337544527}
+  - {fileID: 520781697}
   - {fileID: 80258465}
