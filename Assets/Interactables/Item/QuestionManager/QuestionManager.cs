@@ -1,10 +1,12 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class QuestionManager : MonoBehaviour
 {
     public static QuestionManager Instance { get; private set; }
 
     [SerializeField] private QuestionEntry[] questions;
+    [SerializeField] private ItemIconBank iconBank;
 
     private void Awake()
     {
@@ -20,25 +22,60 @@ public class QuestionManager : MonoBehaviour
             return null;
         }
 
+        if (iconBank == null || iconBank.answerSprites == null || iconBank.answerSprites.Length == 0)
+        {
+            Debug.LogError("[QuestionManager] IconBank is missing or empty!");
+            return null;
+        }
+
         int idx = Random.Range(0, questions.Length);
         QuestionEntry q = questions[idx];
 
-        // Set correct item text
-        if (q.correctItem != null)
-            Debug.Log("Correct item has been selected");
-            q.correctItem.displayName = q.correctAnswerText;
+        // Track which items had their icons changed
+        HashSet<Item> changedItems = new HashSet<Item>();
 
-        // Set wrong item texts
-        if (q.wrongItems != null && q.wrongAnswerTexts != null)
+        // --- Correct answer: set text + random icon ---
+        if (q.correctItem != null)
         {
-            for (int i = 0; i < q.wrongItems.Length && i < q.wrongAnswerTexts.Length; i++)
+            q.correctItem.displayName = q.correctAnswerText;
+            q.correctItem.icon = GetRandomIcon();
+            changedItems.Add(q.correctItem);
+        }
+
+        // --- Wrong answers: set text + random icons ---
+        if (q.wrongItems != null)
+        {
+            for (int i = 0; i < q.wrongItems.Length; i++)
             {
-                if (q.wrongItems[i] != null)
-                    q.wrongItems[i].displayName = q.wrongAnswerTexts[i];
+                Item wrongItem = q.wrongItems[i];
+                if (wrongItem == null) continue;
+
+                if (q.wrongAnswerTexts != null && i < q.wrongAnswerTexts.Length)
+                {
+                    wrongItem.displayName = q.wrongAnswerTexts[i];
+                }
+
+                wrongItem.icon = GetRandomIcon();
+                changedItems.Add(wrongItem);
             }
         }
 
-        Debug.Log("[QuestionManager] Assigned answer texts to items for question: " + q.questionText);
+        // --- Update all active pickups for changed items ---
+        foreach (var pickup in ItemPickup.ActivePickups)
+        {
+            if (pickup != null && pickup.itemData != null && changedItems.Contains(pickup.itemData))
+            {
+                pickup.RefreshSprite();
+            }
+        }
+
+        Debug.Log("[QuestionManager] Assigned texts & icons for question: " + q.questionText);
         return q;
+    }
+
+    private Sprite GetRandomIcon()
+    {
+        int iconIndex = Random.Range(0, iconBank.answerSprites.Length);
+        return iconBank.answerSprites[iconIndex];
     }
 }
