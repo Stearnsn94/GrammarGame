@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour, Interactable
 {
@@ -48,10 +49,10 @@ public class Door : MonoBehaviour, Interactable
             return;
         }
 
-        // 2) This is the item that counts as the correct answer
+        // This is the item that counts as the correct answer
         requiredItem = currentQuestion.correctItem;
 
-        // Optional: if player has no items, don't pause / don't ask
+        // if player has no items, don't pause / don't ask
         if (player.inventory.Count == 0)
         {
             if (InventoryUI.Instance != null)
@@ -61,7 +62,7 @@ public class Door : MonoBehaviour, Interactable
             return;
         }
 
-        // 3) Rebuild inventory so button labels use UPDATED item.displayName
+        // Rebuild inventory so button labels use UPDATED item.displayName
         if (InventoryUI.Instance != null)
         {
             InventoryUI.Instance.Refresh();
@@ -99,6 +100,7 @@ public class Door : MonoBehaviour, Interactable
 
             // Unpause
             Time.timeScale = 1f;
+
             return true;
         }
 
@@ -115,5 +117,6 @@ public class Door : MonoBehaviour, Interactable
             doorSprite.color = Color.gray;
 
         Debug.Log("[Door] Door opened.");
+        SceneManager.LoadSceneAsync(2);
     }
 }
