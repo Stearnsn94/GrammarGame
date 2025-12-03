@@ -5,8 +5,14 @@ public class QuestionManager : MonoBehaviour
 {
     public static QuestionManager Instance { get; private set; }
 
-    [SerializeField] private QuestionEntry[] questions;
+    [Header("Question Pools")]
+    [SerializeField] private QuestionEntry[] easyQuestions;
+    [SerializeField] private QuestionEntry[] mediumQuestions;
+    [SerializeField] private QuestionEntry[] hardQuestions;
+
     [SerializeField] private ItemIconBank iconBank;
+
+    private QuestionEntry[] activeQuestions;
 
     private void Awake()
     {
@@ -14,35 +20,71 @@ public class QuestionManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    // Pick which list to use, if we haven't already
+    private void EnsureActiveQuestions()
+    {
+        if (activeQuestions != null && activeQuestions.Length > 0)
+            return;
+
+        GameDifficulty difficulty = GameDifficulty.Easy;
+
+        if (DifficultyManager.Instance != null)
+        {
+            difficulty = DifficultyManager.Instance.CurrentDifficulty;
+        }
+
+        switch (difficulty)
+        {
+            case GameDifficulty.Easy:
+                activeQuestions = easyQuestions;
+                break;
+            case GameDifficulty.Medium:
+                activeQuestions = mediumQuestions;
+                break;
+            case GameDifficulty.Hard:
+                activeQuestions = hardQuestions;
+                break;
+        }
+
+        if (activeQuestions == null || activeQuestions.Length == 0)
+        {
+            Debug.LogError("[QuestionManager] No questions set up for difficulty: " + difficulty);
+        }
+        else
+        {
+            Debug.Log("[QuestionManager] Using " + activeQuestions.Length + " questions for difficulty: " + difficulty);
+        }
+    }
+
     public QuestionEntry GetRandomQuestion()
     {
-        if (questions == null || questions.Length == 0)
+        EnsureActiveQuestions();
+
+        if (activeQuestions == null || activeQuestions.Length == 0)
         {
-            Debug.LogError("[QuestionManager] No questions configured!");
+            Debug.LogError("[QuestionManager] activeQuestions is empty! Returning null.");
             return null;
         }
 
         if (iconBank == null || iconBank.answerSprites == null || iconBank.answerSprites.Length == 0)
         {
             Debug.LogError("[QuestionManager] IconBank is missing or empty!");
-            return null;
+            // We can still return a question, just without icons
         }
 
-        int idx = Random.Range(0, questions.Length);
-        QuestionEntry q = questions[idx];
+        int idx = Random.Range(0, activeQuestions.Length);
+        QuestionEntry q = activeQuestions[idx];
 
-        // Track which items had their icons changed
-        HashSet<Item> changedItems = new HashSet<Item>();
-
-        // --- Correct answer: set text + random icon ---
+        // --- Correct answer: set text (icon randomized if you’re still using that logic) ---
         if (q.correctItem != null)
         {
             q.correctItem.displayName = q.correctAnswerText;
-            q.correctItem.icon = GetRandomIcon();
-            changedItems.Add(q.correctItem);
+            // if you want random icons, do it here:
+            if (iconBank != null && iconBank.answerSprites.Length > 0)
+                 q.correctItem.icon = iconBank.answerSprites[Random.Range(0, iconBank.answerSprites.Length)];
         }
 
-        // --- Wrong answers: set text + random icons ---
+        // --- Wrong answers: set text (and optionally icons) ---
         if (q.wrongItems != null)
         {
             for (int i = 0; i < q.wrongItems.Length; i++)
@@ -55,27 +97,13 @@ public class QuestionManager : MonoBehaviour
                     wrongItem.displayName = q.wrongAnswerTexts[i];
                 }
 
-                wrongItem.icon = GetRandomIcon();
-                changedItems.Add(wrongItem);
+                // if using random icons:
+                if (iconBank != null && iconBank.answerSprites.Length > 0)
+                     wrongItem.icon = iconBank.answerSprites[Random.Range(0, iconBank.answerSprites.Length)];
             }
         }
 
-        // --- Update all active pickups for changed items ---
-        foreach (var pickup in ItemPickup.ActivePickups)
-        {
-            if (pickup != null && pickup.itemData != null && changedItems.Contains(pickup.itemData))
-            {
-                pickup.RefreshSprite();
-            }
-        }
-
-        Debug.Log("[QuestionManager] Assigned texts & icons for question: " + q.questionText);
+        Debug.Log("[QuestionManager] Selected question: " + q.questionText);
         return q;
-    }
-
-    private Sprite GetRandomIcon()
-    {
-        int iconIndex = Random.Range(0, iconBank.answerSprites.Length);
-        return iconBank.answerSprites[iconIndex];
     }
 }
