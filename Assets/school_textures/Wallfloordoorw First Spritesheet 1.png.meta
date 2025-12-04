@@ -303,10 +303,10 @@ TextureImporter:
       name: Wallfloordoorw First Spritesheet 1_8
       rect:
         serializedVersion: 2
-        x: 723
-        y: 79
-        width: 255
-        height: 213
+        x: 726
+        y: 83
+        width: 248
+        height: 206
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
