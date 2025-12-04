@@ -1475,29 +1475,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestionManager
   easyQuestions:
-  - questionText: This is an easy question answer with easy.
+  - questionText: This is an easy question
     correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
     correctAnswerText: easy
     wrongItems:
     - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
     wrongAnswerTexts:
-    - medium
+    - wrong
   mediumQuestions:
-  - questionText: This is a medium question answer with medium.
+  - questionText: This is a medium question
     correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
     correctAnswerText: medium
     wrongItems:
     - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
     wrongAnswerTexts:
-    - hard
+    - wrong
   hardQuestions:
-  - questionText: This is a hard question answer with hard.
+  - questionText: This is a hard question
     correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
     correctAnswerText: hard
     wrongItems:
     - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
     wrongAnswerTexts:
-    - easy
+    - wrong
   iconBank: {fileID: 11400000, guid: b1fcc9cd7cf021948ad8f521427ea8b8, type: 2}
 --- !u!4 &520781697
 Transform:
@@ -2595,11 +2595,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2187053227244129988, guid: 486e34d33d542b44d98809bce58bd6e6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2187053227244129988, guid: 486e34d33d542b44d98809bce58bd6e6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2187053227244129988, guid: 486e34d33d542b44d98809bce58bd6e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5839,11 +5839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 760607224059826365, guid: db22f34fc031f2b41bd198a242c9e393, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 760607224059826365, guid: db22f34fc031f2b41bd198a242c9e393, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 760607224059826365, guid: db22f34fc031f2b41bd198a242c9e393, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5907,11 +5907,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4402266895876791586, guid: db22f34fc031f2b41bd198a242c9e393, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4402266895876791586, guid: db22f34fc031f2b41bd198a242c9e393, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6172639933094544928, guid: db22f34fc031f2b41bd198a242c9e393, type: 3}
       propertyPath: m_Type
@@ -6009,11 +6009,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2187053227244129988, guid: 486e34d33d542b44d98809bce58bd6e6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2187053227244129988, guid: 486e34d33d542b44d98809bce58bd6e6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2187053227244129988, guid: 486e34d33d542b44d98809bce58bd6e6, type: 3}
       propertyPath: m_LocalPosition.x

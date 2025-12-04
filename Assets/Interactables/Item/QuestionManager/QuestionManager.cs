@@ -10,7 +10,8 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] private QuestionEntry[] mediumQuestions;
     [SerializeField] private QuestionEntry[] hardQuestions;
 
-    [SerializeField] private ItemIconBank iconBank;
+    [Header("Icons")]
+    [SerializeField] private ItemIconBank iconBank;   // holds Sprite[] answerSprites
 
     private QuestionEntry[] activeQuestions;
 
@@ -20,7 +21,7 @@ public class QuestionManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    // Pick which list to use, if we haven't already
+    // Pick the proper pool for the current difficulty
     private void EnsureActiveQuestions()
     {
         if (activeQuestions != null && activeQuestions.Length > 0)
@@ -52,7 +53,8 @@ public class QuestionManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("[QuestionManager] Using " + activeQuestions.Length + " questions for difficulty: " + difficulty);
+            Debug.Log("[QuestionManager] Using " + activeQuestions.Length +
+                      " questions for difficulty: " + difficulty);
         }
     }
 
@@ -69,22 +71,29 @@ public class QuestionManager : MonoBehaviour
         if (iconBank == null || iconBank.answerSprites == null || iconBank.answerSprites.Length == 0)
         {
             Debug.LogError("[QuestionManager] IconBank is missing or empty!");
-            // We can still return a question, just without icons
+            // we can still return a question, but icons won't randomize
         }
 
         int idx = Random.Range(0, activeQuestions.Length);
         QuestionEntry q = activeQuestions[idx];
 
-        // --- Correct answer: set text (icon randomized if you’re still using that logic) ---
+        // Track which Items had their icons/text changed
+        HashSet<Item> changedItems = new HashSet<Item>();
+
+        // --- Correct answer ---
         if (q.correctItem != null)
         {
             q.correctItem.displayName = q.correctAnswerText;
-            // if you want random icons, do it here:
+
             if (iconBank != null && iconBank.answerSprites.Length > 0)
-                 q.correctItem.icon = iconBank.answerSprites[Random.Range(0, iconBank.answerSprites.Length)];
+            {
+                q.correctItem.icon = GetRandomIcon();
+            }
+
+            changedItems.Add(q.correctItem);
         }
 
-        // --- Wrong answers: set text (and optionally icons) ---
+        // --- Wrong answers ---
         if (q.wrongItems != null)
         {
             for (int i = 0; i < q.wrongItems.Length; i++)
@@ -97,13 +106,31 @@ public class QuestionManager : MonoBehaviour
                     wrongItem.displayName = q.wrongAnswerTexts[i];
                 }
 
-                // if using random icons:
                 if (iconBank != null && iconBank.answerSprites.Length > 0)
-                     wrongItem.icon = iconBank.answerSprites[Random.Range(0, iconBank.answerSprites.Length)];
+                {
+                    wrongItem.icon = GetRandomIcon();
+                }
+
+                changedItems.Add(wrongItem);
             }
         }
 
-        Debug.Log("[QuestionManager] Selected question: " + q.questionText);
+        // --- Update ALL active pickups using these Items so the world matches ---
+        foreach (var pickup in ItemPickup.ActivePickups)
+        {
+            if (pickup != null && pickup.itemData != null && changedItems.Contains(pickup.itemData))
+            {
+                pickup.RefreshSprite();
+            }
+        }
+
+        Debug.Log("[QuestionManager] Assigned texts & icons for question: " + q.questionText);
         return q;
+    }
+
+    private Sprite GetRandomIcon()
+    {
+        int index = Random.Range(0, iconBank.answerSprites.Length);
+        return iconBank.answerSprites[index];
     }
 }
