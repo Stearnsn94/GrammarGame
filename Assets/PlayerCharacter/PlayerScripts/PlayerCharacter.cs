@@ -164,9 +164,12 @@ public class PlayerCharacter : MonoBehaviour
 
         if (currentHealth == 0)
         {
-            Debug.Log("Player died (no respawn implemented yet).");
-            // add respawn/reset logic if needed
-            SceneManager.LoadSceneAsync("GameLose");
+            Debug.Log("Player died");
+            int currentIndex = SceneManager.GetActiveScene().buildIndex;
+
+            PlayerPrefs.SetInt("LastLevelIndex", currentIndex);
+            
+            SceneManager.LoadScene("GameLose");
         }
     }
 

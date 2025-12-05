@@ -4,7 +4,9 @@ public class GameOverMenu : MonoBehaviour
 {
     public void restart()
     {
-        SceneManager.LoadSceneAsync("level 1");
+        int lastLevelIndex = PlayerPrefs.GetInt("LastLevelIndex", 1);
+        
+        SceneManager.LoadSceneAsync(lastLevelIndex);
     }
     public void Main_menu()
     {
