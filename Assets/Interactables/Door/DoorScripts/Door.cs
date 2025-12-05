@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour, Interactable
 {
@@ -7,6 +8,9 @@ public class Door : MonoBehaviour, Interactable
 
     [Header("Door Components")]
     [SerializeField] private Collider2D doorCollider;
+
+    [SerializeField] private QuestionManager questionManager;
+
     [SerializeField] private SpriteRenderer doorSprite;
 
     // The item that is the correct answer for THIS interaction
@@ -15,9 +19,11 @@ public class Door : MonoBehaviour, Interactable
     // The question currently active on this door interaction
     private QuestionEntry currentQuestion;
 
+    private PlayerCharacter player;
+
     private void Awake()
     {
-        currentQuestion = QuestionManager.Instance.GetRandomQuestion(); 
+        currentQuestion = questionManager.GetRandomQuestion(); 
     }
 
     private void Reset()
@@ -34,7 +40,7 @@ public class Door : MonoBehaviour, Interactable
             return;
         }
 
-        if (QuestionManager.Instance == null)
+        if (questionManager == null)
         {
             Debug.LogError("[Door] No QuestionManager.Instance in scene!");
             return;
@@ -48,10 +54,10 @@ public class Door : MonoBehaviour, Interactable
             return;
         }
 
-        // 2) This is the item that counts as the correct answer
+        // This is the item that counts as the correct answer
         requiredItem = currentQuestion.correctItem;
 
-        // Optional: if player has no items, don't pause / don't ask
+        // if player has no items, don't pause / don't ask
         if (player.inventory.Count == 0)
         {
             if (InventoryUI.Instance != null)
@@ -61,7 +67,7 @@ public class Door : MonoBehaviour, Interactable
             return;
         }
 
-        // 3) Rebuild inventory so button labels use UPDATED item.displayName
+        // Rebuild inventory so button labels use UPDATED item.displayName
         if (InventoryUI.Instance != null)
         {
             InventoryUI.Instance.Refresh();
@@ -99,10 +105,12 @@ public class Door : MonoBehaviour, Interactable
 
             // Unpause
             Time.timeScale = 1f;
+
             return true;
         }
 
         // WRONG
+        player.DrainHealth(1);
         return false;
     }
 
@@ -115,5 +123,7 @@ public class Door : MonoBehaviour, Interactable
             doorSprite.color = Color.gray;
 
         Debug.Log("[Door] Door opened.");
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadSceneAsync(currentIndex+1);
     }
 }

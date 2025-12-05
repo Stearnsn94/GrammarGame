@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: IconBank
   m_EditorClassIdentifier: Assembly-CSharp::ItemIconBank
   answerSprites:
-  - {fileID: -1836120431684336037, guid: d485411336bed6c418fb4b5f0d42e850, type: 3}
-  - {fileID: -8320890476543404394, guid: 201a40cfe24cbcc4fbef7bdef89d69e1, type: 3}
-  - {fileID: 8984754096541894249, guid: 109c8479acaced7449b45076a47e6146, type: 3}
-  - {fileID: 897710771807637462, guid: caad4f3d6adcdd54a9eac0326aed0da4, type: 3}
-  - {fileID: -7637840086647324531, guid: 5ecd51446a75a1d4eb56d525185513c9, type: 3}
-  - {fileID: -2067898546876541913, guid: 7c579fb66ec4a3d4cb1f1ed4f5dda236, type: 3}
-  - {fileID: -1800847564758328457, guid: edfa87fb22c1d8d4cbb6ee5aacf72356, type: 3}
-  - {fileID: -2181952438776930400, guid: 5ffa0609ddeec804ca1325040b70fbfc, type: 3}
-  - {fileID: -1915776564401465818, guid: e26229599a247a74f9075c375f495fcf, type: 3}
+  - {fileID: 4459079760939664828, guid: 66f738801894dee42beb86a38d0d4367, type: 3}
+  - {fileID: 8901292563399496919, guid: 66f738801894dee42beb86a38d0d4367, type: 3}
+  - {fileID: -8294800776780694190, guid: 66f738801894dee42beb86a38d0d4367, type: 3}
+  - {fileID: 74924358109436488, guid: 66f738801894dee42beb86a38d0d4367, type: 3}
+  - {fileID: -5214108355162048300, guid: 82e09328fdad2bd42b43dfcb18526d94, type: 3}
+  - {fileID: -3920127074287885450, guid: 82e09328fdad2bd42b43dfcb18526d94, type: 3}
+  - {fileID: -3484643255900280999, guid: 82e09328fdad2bd42b43dfcb18526d94, type: 3}

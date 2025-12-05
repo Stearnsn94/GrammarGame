@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerCharacter : MonoBehaviour
@@ -24,6 +26,11 @@ public class PlayerCharacter : MonoBehaviour
     [Header("Sprites (Cardinal Directions)")]
     private Animator animator;
 
+    [Header("Damage Feedback")]
+    [SerializeField] private float damageCooldown = 0.75f;   // invulnerability time
+    [SerializeField] private float flashInterval = 0.1f;     // blink speed
+
+    private bool isInvulnerable = false;
     private Vector2 moveInput;
     private Vector2 lastMoveDirection = Vector2.down;  // default facing down
 
@@ -141,24 +148,52 @@ public class PlayerCharacter : MonoBehaviour
 
     public void DrainHealth(int amount)
     {
+        if (isInvulnerable) return; // ignore hits during cooldown
+
         currentHealth -= amount;
         if (currentHealth < 0) currentHealth = 0;
 
         Debug.Log("Player took damage. Current health: " + currentHealth);
 
-        // Update the slider UI
+        // Update slider UI
         if (healthSlider != null)
-        {
             healthSlider.value = currentHealth;
-        }
 
-        // TODO: you can add respawn or game-over behavior here if desired.
-        // For now, we just log it.
+        // Start invulnerability feedback
+        StartCoroutine(InvulnerabilityFlash());
+
         if (currentHealth == 0)
         {
-            Debug.Log("Player died (no respawn implemented yet).");
+            Debug.Log("Player died");
+            int currentIndex = SceneManager.GetActiveScene().buildIndex;
+
+            PlayerPrefs.SetInt("LastLevelIndex", currentIndex);
+            
+            SceneManager.LoadScene("GameLose");
         }
     }
+
+    private IEnumerator InvulnerabilityFlash()
+    {
+        isInvulnerable = true;
+
+        float elapsed = 0f;
+
+        while (elapsed < damageCooldown)
+        {
+            // Toggle sprite visibility
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+
+            elapsed += flashInterval;
+            yield return new WaitForSeconds(flashInterval);
+        }
+
+        // Ensure sprite visible again
+        spriteRenderer.enabled = true;
+
+        isInvulnerable = false;
+    }
+
 
     // Detect interactables via trigger
     private void OnTriggerEnter2D(Collider2D other)
