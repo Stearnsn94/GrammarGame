@@ -12,7 +12,7 @@ public class QuestionManager : MonoBehaviour
 
     [Header("Icons")]
     [SerializeField] private ItemIconBank iconBank;   // holds Sprite[] answerSprites
-
+// hello
     private QuestionEntry[] activeQuestions;
 
     private void Awake()
@@ -24,10 +24,12 @@ public class QuestionManager : MonoBehaviour
     // Pick the proper pool for the current difficulty
     private void EnsureActiveQuestions()
     {
+
+        GameDifficulty difficulty = GameDifficulty.Easy;
         if (activeQuestions != null && activeQuestions.Length > 0)
             return;
 
-        GameDifficulty difficulty = GameDifficulty.Easy;
+        
 
         if (DifficultyManager.Instance != null)
         {
@@ -80,7 +82,7 @@ public class QuestionManager : MonoBehaviour
         // Track which Items had their icons/text changed
         HashSet<Item> changedItems = new HashSet<Item>();
 
-        // --- Correct answer ---
+        // Correct answer
         if (q.correctItem != null)
         {
             q.correctItem.displayName = q.correctAnswerText;
@@ -93,7 +95,7 @@ public class QuestionManager : MonoBehaviour
             changedItems.Add(q.correctItem);
         }
 
-        // --- Wrong answers ---
+        // Wrong answers
         if (q.wrongItems != null)
         {
             for (int i = 0; i < q.wrongItems.Length; i++)
@@ -115,7 +117,7 @@ public class QuestionManager : MonoBehaviour
             }
         }
 
-        // --- Update ALL active pickups using these Items so the world matches ---
+        // Update ALL active pickups using these Items so the world matches
         foreach (var pickup in ItemPickup.ActivePickups)
         {
             if (pickup != null && pickup.itemData != null && changedItems.Contains(pickup.itemData))

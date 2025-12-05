@@ -5,7 +5,7 @@ public class main_menu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("SampleScene");
+        SceneManager.LoadSceneAsync("level 1");
     }
 
     public void StartGameWithDifficulty(int difficultyIndex)
