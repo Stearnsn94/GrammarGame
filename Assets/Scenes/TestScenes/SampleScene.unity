@@ -1626,7 +1626,7 @@ MonoBehaviour:
     wrongItems:
     - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
     wrongAnswerTexts:
-    - wrong
+    - Harmless
   - questionText: 'Select the correct word for the following defintion: To guide,
       excite, uplift, or encourage; to bring about or cause'
     correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
@@ -1634,23 +1634,253 @@ MonoBehaviour:
     wrongItems:
     - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
     wrongAnswerTexts:
-    - wrong
+    - Discourage
   mediumQuestions:
-  - questionText: This is a medium question
+  - questionText: 'Select the correct word for the following defintion: cancel; put
+      an end to stop'
     correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
-    correctAnswerText: medium
+    correctAnswerText: Abolish
     wrongItems:
     - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
     wrongAnswerTexts:
-    - wrong
+    - Establish
+  - questionText: 'Select the correct word for the following defintion: cruel or
+      inhumane treatment'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Abolish
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Protect
+  - questionText: 'Select the correct word for the following defintion: to do something
+      by making an effort; to complete successfully'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Accomplish
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Fail
+  - questionText: 'Select the correct word for the following defintion: go back and
+      forth'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Alternate
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Same
+  - questionText: 'Select the correct word for the following defintion: a word that
+      means the opposite of another word'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Antonym
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Synonym
+  - questionText: 'Select the correct word for the following defintion: a pleasant
+      smell'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Aroma
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Stench
+  - questionText: 'Select the correct word for the following defintion: mild; tasteless;
+      dull'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Bland
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Flavorful
+  - questionText: 'Select the correct word for the following defintion: to have an
+      extremely strong desire for something'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Crave
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Dislike
+  - questionText: 'Select the correct word for the following defintion: do or give
+      something to somebody in return'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Compensate
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Deprive
+  - questionText: 'Select the correct word for the following defintion: to do as
+      one is asked or ordered'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Comply
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Establish
+  - questionText: 'Select the correct word for the following defintion: polite and
+      gracious; considerate toward others; well-mannered'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Courteous
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Rude
+  - questionText: 'Select the correct word for the following defintion: discuss the
+      pros and cons of an issue'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Debate
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Agree
+  - questionText: 'Select the correct word for the following defintion: to give orders'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Dictate
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Follow
+  - questionText: 'Select the correct word for the following defintion: any substance
+      that can be used as food'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Edible
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Inedible
+  - questionText: 'Select the correct word for the following defintion: To avoid,
+      dodge'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Evade
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Confront
+  - questionText: 'Select the correct word for the following defintion: to irritate,
+      annoy, or anger'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Exasperate
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Soothe
+  - questionText: 'Select the correct word for the following defintion: exactly alike'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Identical
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Different
+  - questionText: 'Select the correct word for the following defintion: someone who
+      does things on his or her own'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Independent
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Dependent
+  - questionText: 'Select the correct word for the following defintion: main character'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Protagonist
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Antagonist
+  - questionText: 'Select the correct word for the following defintion: someone who
+      tells a story'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Narrator
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Listener
   hardQuestions:
-  - questionText: This is a hard question
+  - questionText: 'Select the correct word for the following defintion: more than
+      enough'
     correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
-    correctAnswerText: hard
+    correctAnswerText: Abundant
     wrongItems:
     - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
     wrongAnswerTexts:
-    - wrong
+    - Scarce
+  - questionText: 'Select the correct word for the following defintion: to gather
+      or collect'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Accumulate
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Discard
+  - questionText: 'Select the correct word for the following defintion: extreme physical
+      or mental suffering'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Agony
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Comfort
+  - questionText: 'Select the correct word for the following defintion: showing too
+      much pride in oneself'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Arrogant
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Humble
+  - questionText: 'Select the correct word for the following defintion: a guiding
+      light or signal'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Beacon
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Obscurity
+  - questionText: 'Select the correct word for the following defintion: A system
+      in which people make, exchange and use things that have value.'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Economy
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Waste
+  - questionText: 'Select the correct word for the following defintion: producing
+      results without waste'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Efficient
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Inefficient
+  - questionText: 'Select the correct word for the following defintion: no longer
+      existing'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Extinct
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Alive
+  - questionText: 'Select the correct word for the following defintion: to mix or
+      to join'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Fuse
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Separate
+  - questionText: 'Select the correct word for the following defintion: cause; produce;
+      create'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Generate
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Destroy
+  - questionText: 'Select the correct word for the following defintion: knowing everything'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Omniscient
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Ignorant
   iconBank: {fileID: 11400000, guid: b1fcc9cd7cf021948ad8f521427ea8b8, type: 2}
 --- !u!4 &520781697
 Transform:
@@ -1847,7 +2077,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 305.2194, y: 438.45}
+  m_SizeDelta: {x: 217.682, y: 418}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &534382305
 MonoBehaviour:
@@ -3773,8 +4003,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3811,7 +4041,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -39.2377, y: 0, z: -34.529236, w: 0}
+  m_margin: {x: -230.90991, y: 0, z: -265.91754, w: -151.95636}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4297,12 +4527,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 258848508}
         m_TargetAssemblyTypeName: PlayerCharacter, Assembly-CSharp
-        m_MethodName: TakeDamage
+        m_MethodName: DrainHealth
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: -1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5946,6 +6176,10 @@ PrefabInstance:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 1476840081}
+    - target: {fileID: 8832473114581591083, guid: 0d401b9362ed5d34eaa0994c4f54b323, type: 3}
+      propertyPath: currentHealth
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -19,6 +19,8 @@ public class Door : MonoBehaviour, Interactable
     // The question currently active on this door interaction
     private QuestionEntry currentQuestion;
 
+    private PlayerCharacter player;
+
     private void Awake()
     {
         currentQuestion = questionManager.GetRandomQuestion(); 
@@ -108,6 +110,7 @@ public class Door : MonoBehaviour, Interactable
         }
 
         // WRONG
+        player.DrainHealth(1);
         return false;
     }
 

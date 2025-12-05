@@ -2,15 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameWinMenu : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void Main_menu()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SceneManager.LoadSceneAsync("MainMenu");
     }
 }

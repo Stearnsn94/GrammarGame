@@ -2,15 +2,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void restart()
     {
-        
+        SceneManager.LoadSceneAsync("level 1");
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Main_menu()
     {
-        
+        SceneManager.LoadSceneAsync("MainMenu");
     }
 }
