@@ -3284,7 +3284,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &667283339
 RectTransform:
@@ -3951,6 +3951,7 @@ GameObject:
   - component: {fileID: 795891674}
   - component: {fileID: 795891673}
   - component: {fileID: 795891676}
+  - component: {fileID: 795891677}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4076,6 +4077,18 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &795891677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795891672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc64c5300f6b974ca3e20142853dbc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
 --- !u!1 &832145335
 GameObject:
   m_ObjectHideFlags: 0
@@ -10331,7 +10344,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 795891677}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: BackToMenu
         m_Mode: 1
@@ -10916,6 +10929,7 @@ SceneRoots:
   - {fileID: 589212336}
   - {fileID: 1920666622}
   - {fileID: 948295511}
+  - {fileID: 1078115856}
   - {fileID: 667283339}
   - {fileID: 199736280}
   - {fileID: 155478752}
@@ -10926,5 +10940,4 @@ SceneRoots:
   - {fileID: 1925874301}
   - {fileID: 379358185}
   - {fileID: 1420093112}
-  - {fileID: 1078115856}
   - {fileID: 461223061}
