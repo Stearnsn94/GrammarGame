@@ -8405,7 +8405,7 @@ GameObject:
   - component: {fileID: 1638964373}
   - component: {fileID: 1638964372}
   m_Layer: 0
-  m_Name: Wallfloordoorw First Spritesheet 5_2
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8425,6 +8425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 1
   doorCollider: {fileID: 1638964373}
+  questionManager: {fileID: 1967060140}
   doorSprite: {fileID: 1638964374}
 --- !u!61 &1638964373
 BoxCollider2D:
@@ -8518,7 +8519,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 836785895
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 9
   m_Sprite: {fileID: 4623608455537183901, guid: 7eb46131e52056744a6a3fbe795cae66, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

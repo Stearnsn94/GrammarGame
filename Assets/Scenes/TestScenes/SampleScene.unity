@@ -1475,9 +1475,162 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::QuestionManager
   easyQuestions:
-  - questionText: This is an easy question
+  - questionText: 'Select the correct word for the following defintion: A well-known
+      person; someone who is famous; fame'
     correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
-    correctAnswerText: easy
+    correctAnswerText: Celebrity
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Unknown
+  - questionText: 'Select the correct word for the following defintion: Coming each
+      year; once a year; lasting a year'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Annual
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Occasional
+  - questionText: 'Select the correct word for the following defintion: Trying to
+      outdo others; a game or contest'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Competition
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Cooperation
+  - questionText: 'Select the correct word for the following defintion: To get or
+      gain through some effort'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Obtain
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Lose
+  - questionText: 'Select the correct word for the following defintion: Firmly or
+      solidly built; determined'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Sturdy
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Fragile
+  - questionText: 'Select the correct word for the following defintion: Steamy or
+      heavy with moisture; moist or damp'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Humid
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Dry
+  - questionText: 'Select the correct word for the following defintion: Having value,
+      importance, or worth; good enough for'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Worthy
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Unworthy
+  - questionText: 'Select the correct word for the following defintion: Without errors,
+      completely correct; conforming to the truth'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Accurate
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Wrong
+  - questionText: 'Select the correct word for the following defintion: A family
+      member who lived at an earlier time'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Ancestor
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Descendant
+  - questionText: 'Select the correct word for the following defintion: A terrible
+      event that brings great damage or suffering; a great loss'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Disaster
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Miracle
+  - questionText: 'Select the correct word for the following defintion: To stay alive
+      or continue to exist; to keep on going; to live longer than'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Survive
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Perish
+  - questionText: 'Select the correct word for the following defintion: Not skillful
+      or graceful; hard to handle; embarrassing'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Awkward
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Smooth
+  - questionText: 'Select the correct word for the following defintion: A person
+      who chooses to join or to do a service'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Volunteer
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Forced
+  - questionText: 'Select the correct word for the following defintion: To feed or
+      help grow and develop; to support'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Nourish
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - Starve
+  - questionText: 'Select the correct word for the following defintion: Standing
+      apart from others due to excellence; unpaid'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Outstanding
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - wrong
+  - questionText: 'Select the correct word for the following defintion: Not on time,
+      delayed; slow-moving'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Independent
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - wrong
+  - questionText: 'Select the correct word for the following defintion: To give up
+      all hope, lose heart'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Despair
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - wrong
+  - questionText: 'Select the correct word for the following defintion: Brave, noble,
+      or larger than life; involving extreme effort'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Heroic
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - wrong
+  - questionText: 'Select the correct word for the following defintion: Poisonous
+      or deadly'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Toxic
+    wrongItems:
+    - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
+    wrongAnswerTexts:
+    - wrong
+  - questionText: 'Select the correct word for the following defintion: To guide,
+      excite, uplift, or encourage; to bring about or cause'
+    correctItem: {fileID: 11400000, guid: 081ed3f023e12a44facde3a874644283, type: 2}
+    correctAnswerText: Inspire
     wrongItems:
     - {fileID: 11400000, guid: 806f6ab1614188c489c18214d94a4b24, type: 2}
     wrongAnswerTexts:
@@ -1694,7 +1847,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 171.0215, y: 315.446}
+  m_SizeDelta: {x: 305.2194, y: 438.45}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &534382305
 MonoBehaviour:
@@ -2245,6 +2398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isLocked: 1
   doorCollider: {fileID: 652329453}
+  questionManager: {fileID: 520781696}
   doorSprite: {fileID: 652329451}
 --- !u!1 &660961752
 GameObject:
@@ -2692,7 +2846,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076293945, y: 0}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &947664083

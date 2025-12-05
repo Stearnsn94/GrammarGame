@@ -8,6 +8,9 @@ public class Door : MonoBehaviour, Interactable
 
     [Header("Door Components")]
     [SerializeField] private Collider2D doorCollider;
+
+    [SerializeField] private QuestionManager questionManager;
+
     [SerializeField] private SpriteRenderer doorSprite;
 
     // The item that is the correct answer for THIS interaction
@@ -18,7 +21,7 @@ public class Door : MonoBehaviour, Interactable
 
     private void Awake()
     {
-        currentQuestion = QuestionManager.Instance.GetRandomQuestion(); 
+        currentQuestion = questionManager.GetRandomQuestion(); 
     }
 
     private void Reset()
@@ -35,7 +38,7 @@ public class Door : MonoBehaviour, Interactable
             return;
         }
 
-        if (QuestionManager.Instance == null)
+        if (questionManager == null)
         {
             Debug.LogError("[Door] No QuestionManager.Instance in scene!");
             return;
@@ -117,6 +120,7 @@ public class Door : MonoBehaviour, Interactable
             doorSprite.color = Color.gray;
 
         Debug.Log("[Door] Door opened.");
-        SceneManager.LoadSceneAsync(2);
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadSceneAsync(currentIndex+1);
     }
 }
